@@ -40,12 +40,12 @@ jobs:
         path: ${{ github.workspace }}/target/book*.jar
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: deliver
     steps:
     - uses: actions/checkout@v4
     - name: Deploy to heroku
       uses: AkhileshNS/heroku-deploy@v3.13.15
       with:
-        heroku_api_key: ${secret.HEROKU_API_KEY}
+        heroku_api_key: ${{secret.HEROKU_API_KEY}}
         heroku_email: "romainsessa@gmail.com"
         heroku_app_name: "intense-bastion-19533"  
