@@ -8,7 +8,7 @@ public class HelloController {
 
 	@GetMapping
 	public String hello() {
-		return "Hello from main branch!";
+		return "Hello from github actions!";
 	}
 	
 }
